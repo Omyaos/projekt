@@ -1,0 +1,10 @@
+body {
+    background-image: url(bb1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+body>div {
+    overflow: scroll;
+}
