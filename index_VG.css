@@ -181,14 +181,60 @@ opacity: 0;
     margin-top: 10px;
 }
 
-.anecdotes li{
-    background-color: #7894e7;
+.anecdotes li {
+    background-color: #ddc9be;
     font-weight: bold;
     height: 25vw;
     display: flex;
     padding: 20px;
 }
 
+.anecdotes li:first-child{
+    border-radius: 25px 0 25px 25px;
+    color:#386277;
+    align-items: center;
+}
+
+.anecdotes li:last-child{
+    border-radius: 25px 0 25px 25px;
+    color: hwb(200 22% 53%);
+    align-items: center;
+}
+
+.anecdotes li .image {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.bottom_right_90 {
+    border-radius: 25px 25px 0 25px;
+    color: #386277;
+    align-items: center;
+}
+
+.top_right_90 {
+    grid-column: 1/2;
+    color: #386277;
+    align-items: center;
+}
+
+.empty {
+    grid-column: 2/3;
+    grid-row: 1;
+    opacity: 0;
+}
+
+.two_wide {
+    grid-column: 3/5;
+    grid-row: 1;
+}
+
+#axis_bold_as_love .best {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    position: relative;
+}
 
 /*specifikt för crybaby albumet-----------*/
 .song_list {
@@ -200,10 +246,10 @@ opacity: 0;
 }
 
 .song_list div {
-    background-color: #2354e5;
+    background-color: #ddc9be;
     padding: 1vw 2vw;
     list-style-position: inside;
-    color: #f1d8d9;
+    color: white;
 }
 
 .song_list>div:first-child{
@@ -223,4 +269,20 @@ opacity: 0;
     margin-left: 5px;
 }
 
+.image_1 {
+    border-radius: 0 25px 25px 25px;
+    background-image: url(f1.jpg);
+    background-size: cover;
+    background-position: center;
+    align-items: end;
+}
+
 /*-------------------------------*/
+
+/*specifikt för album k12---------*/
+
+#axis_bold_as_love .song_list_02{
+background-color: #f7cbe2;
+color: #386277;
+}
+
