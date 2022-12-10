@@ -1,14 +1,226 @@
+/*fonter-------------------------------*/
+@font-face {
+    font-family: bungee-shade;;
+    src: url(BungeeShade-Regular.ttf);
+}
+
+@font-face {
+    font-family: bungee-regular;
+    src: url(BungeeOutline-Regular.ttf);
+}
+
+@font-face {
+    font-family: barlow;
+    src: url(BarlowCondensed-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: barlowbold;
+    src: url(BarlowCondensed-SemiBold.ttf);
+}
+/*-------------------------------------------*/
+
+/*kroppsgrejerna----------------------------*/
+:root {
+    margin: 0;
+    /*boxsizing: border-box;*/
+}
+
 body {
     background-image: url(bb1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
+    background-position: cover;
     width: 100vw;
     height: 100vh;
 }
 
-body>div  {
-    overflow-y: scroll;
-    overflow-x: hidden;
+.container {
+    margin: 100px auto;
+    background-color: rgba(52, 85, 218, 0.3);
+    border-radius: 20px;
+    padding: 30px;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+/*-------------------------------------*/
+
+/*titel och nav-------------------------*/
+header>h1 {
+    font-family: bungee-shade;
+    font-size: 5vw;
+    margin-bottom: 60px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.navi {
+    font-size: 20px;
+    background-color:rgba(240, 248, 255, 0.5);
+    width: 400px;
+    height: 50px;
+    margin: 2px;
+    border-radius: 10px;
+    color: black;
+
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.navi:first-child:active{
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navi:nth-of-type(2){
+    font-family: barlowbold;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+}
+
+.navi:nth-of-type(3):active{
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navi:nth-of-type(4):active{
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/*-------------------------------------------*/
+
+/*texterna----------------------------------*/
+
+article {
+    margin-bottom: 20px;
+    background-color:rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    color:rgba(255, 255, 255, 0.8);
+}
+
+.best {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.album_data {
+    grid-column: 1/4;
+    margin-right: 20px;
+}
+.album_data p{
+    margin-top: 50px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.cover {
+    grid-column: 4/7;
+    position: relative;
+}
+.name{
+    font-family: bungee-regular;
+    font-size: 2.3vw;
+}
+
+.years{
+    font-family: barlowbold;
+    font-size: 1.7vw;
+}
+
+.show_hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px 25px 0 0 ;
+    left: 0;
+    opacity: 1;
+    transition: all 0.7s ease;
+}
+
+.show_not_hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 25px 0 0 ;
+    left: 0;
+    opacity: 1;
+    transition: all 0.7s ease;
+}
+
+.show_not_hover:hover {
+opacity: 0;
+}
+
+.anecdotes {
+    grid-column: 1/span 6;
+    grid-row: 3/4;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding-left: 0px;
+    margin-top: 10px;
+}
+
+.anecdotes li{
+    background-color: #7894e7;
+    font-weight: bold;
+    height: 25vw;
+    display: flex;
+    padding: 20px;
+}
+
+
+/*specifikt för crybaby albumet-----------*/
+.song_list {
+    grid-column: 4/7;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.song_list div {
+    background-color: #2354e5;
+    padding: 1vw 2vw;
+    list-style-position: inside;
+    color: #f1d8d9;
+}
+
+.song_list>div:first-child{
+    border-radius: 0 0 0 25px;
+}
+
+.song_list>div:last-child{
+    border-radius: 0 0 25px 0;
+}
+
+.song_list ul {
+    list-style: conic-gradient;
+    margin-left: 5px;
+}
+
+.song_list h2 {
+    margin-left: 5px;
+}
+
+/*-------------------------------*/
