@@ -23,7 +23,7 @@
 /*kroppsgrejerna----------------------------*/
 :root {
     margin: 0;
-    /*boxsizing: border-box;*/
+    box-sizing: border-box;
 }
 
 body {
@@ -34,10 +34,11 @@ body {
     background-position: cover;
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .container {
-    margin: 100px auto;
+    margin: 100px 75px 100px 70px;
     background-color: rgba(52, 85, 218, 0.3);
     border-radius: 20px;
     padding: 30px;
@@ -305,7 +306,7 @@ color: #386277;
     grid-template-columns: repeat(6, 1fr);
     padding-left: 0px;
     margin-top: 10px;
-    background-color: #f7cbe2;
+    background-color: #e8c4bd;
     font-weight: bold;
     height: 25vw;
 
@@ -332,4 +333,134 @@ color: #386277;
     display: flex;
     justify-content: end;
     align-items: end;
+}
+
+.black {
+    border-radius: 25px 25px 0 25px;
+    color: #386277;
+}
+
+.image_2 {
+    background-image: url(f33.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+footer {
+    margin-top: 50px;
+    margin-bottom: -10px;
+    color: white;
+}
+
+/*skärmanpassning---------------------------*/
+
+@media (min-width: 1111px) {
+    body{
+        font-size: 16.65px;
+    }
+    
+    .album_data h1 {
+        font-size: 25.5px;
+    }
+
+    .album_data h2 {
+        font-size: 55.5px;
+    }
+
+    header h1 {
+        font-size: 55.5px;
+    }
+}
+
+@media (max-width: 900px) {
+    body{
+        font-size: 13.5px;
+    }
+
+    .album_data h1 {
+        font-size: 20.7px;
+    }
+
+    .album_data h2 {
+        font-size: 15.3px;
+    }
+
+    header h1 {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 854px) {
+    .icon {
+        bottom: 180px;
+    }
+}
+
+@media (max-width: 800px) {
+    .best {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    header h1 {
+        text-align: center;
+        font-size: 70px;
+    }
+
+    .container{
+        padding: 16px;
+    }
+
+    article {
+        padding: 12px;
+    }
+
+    .cover {
+        grid-row: 1;
+        grid-column: 1/5;
+    }
+
+    .show_hover {
+        border-radius: 20px 0 0 20px;
+    }
+
+    .show_not_hover:hover {
+        display: none;
+    }
+
+    .song_list {
+        grid-row: 1;
+        grid-column: 5/8;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+
+    .song_list > div: :first-child{
+        border-radius: 0 20px 0 0 ;
+        padding-bottom: 15px;
+        flex-grow: 1;
+    }
+
+    .song_list h2 {
+        font-size: 24px;
+    }
+
+    .album_data {
+        grid-column: 1/8;
+    }
+
+    .album_data h1 {
+        font-size: 45px;
+        padding-top: 10px;
+    }
+
+    .album_data h2 {
+        font-size: 25px;
+    }
+
+    .album_data p {
+        font-size: 16px;
+    }
 }
