@@ -80,7 +80,7 @@ nav {
     align-items: center;
 }
 
-.navi:first-o:first-of-type:active{
+.navi:first-of-type:active{
     cursor: pointer;
     color: white;
     background-color: rgba(0, 0, 0, 0.3);
