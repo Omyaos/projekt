@@ -31,14 +31,15 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: cover;
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
+    background-position: center;
+    font-size: 1.5vw;
+    /*width: 92vw;
+    height: 100vh;*/
+    margin: 100px 4vw 100px 4vw ;
 }
 
 .container {
-    margin: 100px 75px 100px 70px;
+    margin: 100px auto;
     background-color: rgba(52, 85, 218, 0.3);
     border-radius: 20px;
     padding: 30px;
@@ -51,7 +52,7 @@ main {
 /*-------------------------------------*/
 
 /*titel och nav-------------------------*/
-header>h1 {
+header h1 {
     font-family: bungee-shade;
     font-size: 5vw;
     margin-bottom: 60px;
@@ -71,6 +72,7 @@ nav {
     margin: 2px;
     border-radius: 10px;
     color: black;
+    font-family: barlow;
 
     display: flex;
     flex-grow: 1;
@@ -78,7 +80,7 @@ nav {
     align-items: center;
 }
 
-.navi:first-child:active{
+.navi:first-o:first-of-type{
     cursor: pointer;
     color: white;
     background-color: rgba(0, 0, 0, 0.3);
@@ -124,7 +126,7 @@ article {
     grid-column: 1/4;
     margin-right: 20px;
 }
-.album_data p{
+.album_data p {
     margin-top: 50px;
 }
 
@@ -147,29 +149,26 @@ ul {
 }
 
 .show_hover {
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 25px 25px 0 0 ;
-    left: 0;
-    opacity: 1;
-    transition: all 0.7s ease;
+
 }
 
 .show_not_hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 20px 25px 0 0 ;
+    object-fit: 175px;
+    border-radius: 25px 25px 0 0 ;
     left: 0;
-    opacity: 1;
+    opacity: 0;
     transition: all 0.7s ease;
 }
 
 .show_not_hover:hover {
-opacity: 0;
+opacity: 1;
 }
 
 .anecdotes {
@@ -190,7 +189,7 @@ opacity: 0;
     padding: 20px;
 }
 
-.anecdotes li:first-child{
+.anecdotes li:first-of-type{
     border-radius: 25px 0 25px 25px;
     color:#386277;
     align-items: center;
@@ -231,6 +230,7 @@ opacity: 0;
     grid-row: 1;
     color: #386277;
     align-items: center;
+    padding: 10px;
 }
 
 
@@ -244,23 +244,23 @@ opacity: 0;
 }
 
 .song_list div {
-    background-color: #ddc9be;
+    background-color: #c5c0cd;
     padding: 1vw 2vw;
     list-style-position: inside;
     color: #386277;
 }
 
-.song_list>div:first-child{
+.song_list>div:first-of-type{
     border-radius: 0 0 0 25px;
 }
 
-.song_list>div:last-child{
+.song_list>div:last-of-type{
     border-radius: 0 0 25px 0;
 }
 
 .song_list ul {
     list-style: conic-gradient;
-    margin-left: 5px;
+    margin-left: -20px;
 }
 
 .song_list h2 {
@@ -289,18 +289,6 @@ opacity: 0;
 background-color: #f7cbe2;
 color: #386277;
 }
-
-.icon {
-    background-image: url(number-1-icon.png);
-    background-size: 40px;
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    left: -75px;
-    bottom: 200px;
-}
-
 .ane_02 li {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -344,6 +332,7 @@ color: #386277;
     background-image: url(f33.jpg);
     background-size: cover;
     background-position: center;
+    color: white;
 }
 
 footer {
@@ -367,9 +356,9 @@ footer {
         font-size: 55.5px;
     }
 
-    header h1 {
-        font-size: 55.5px;
-    }
+   /* header h1 {
+        font-size: 85px;
+    }*/
 }
 
 @media (max-width: 900px) {
@@ -386,17 +375,18 @@ footer {
     }
 
     header h1 {
-        font-size: 45px;
+        font-size: 4vw;
     }
 }
 
 @media (max-width: 854px) {
-    .icon {
-        bottom: 180px;
+    header h1 {
+        font-size: 75;
     }
 }
 
 @media (max-width: 800px) {
+
     .best {
         grid-template-columns: repeat(7, 1fr);
     }
@@ -423,6 +413,10 @@ footer {
         border-radius: 20px 0 0 20px;
     }
 
+    .show_not_hover {
+        display: none;
+    }
+
     .show_not_hover:hover {
         display: none;
     }
@@ -437,8 +431,12 @@ footer {
         font-size: 13px;
     }
 
-    .song_list > div: :first-child{
-        border-radius: 0 20px 0 0 ;
+    .song_list div {
+        padding-top: 15px;
+    }
+
+    .song_list > div:first-child{
+        border-radius: 0 20px 0 0;
         padding-bottom: 15px;
         flex-grow: 1;
     }
@@ -510,31 +508,40 @@ footer {
         grid-column: 4 / 5;
         grid-row: 2;
     }
-
-    .icon {
-        left: -65px;
-        bottom: 210px;
-    }
 }
 
 @media (max-width: 739px) {
-    .icon {
-        left: -65px;
-        bottom: 270px;
-    }
+
 }
 
 @media (max-width: 596px) {
+
     .anecdotes {
         font-size: 2.1vw;
+    }
+
+    header h1 {
+        font-size: 50px ;
     }
 }
 
 @media (max-width: 500px) {
+    :root {
+        margin-top: 0;
+    }
+    body {
+        margin-top: auto;
+        margin-bottom: 10px;
+        padding-top: 0;
+        
+    }
     main {
         gap: 10px;
     }
 
+    header h1 {
+        font-size: 40px;
+    }
     .best {
         grid-template-columns: 1fr;
     }
@@ -543,6 +550,7 @@ footer {
         padding: 0;
         border-radius: 0;
         margin: 0;
+        overflow: hidden;
     }
 
     .master {
@@ -571,6 +579,7 @@ footer {
         padding-bottom: 20px;
         font-size: 14px;
         flex-basis: 200px;
+        margin-top: 10px;
     }
 
     .song_list div:nth-of-type(1){
@@ -587,7 +596,7 @@ footer {
     }
 
     .show_hover {
-        border-radius: 20px 20px 0 0 ;
+        border-radius: 20px 20px 0 0;
         padding-bottom: 10px;
     }
 
@@ -616,14 +625,17 @@ footer {
         grid-template-columns: repeat(3, 1fr);
         gap: 5px;
         font-size: 15px;
+
     }
 
     .anecdotes li {
         height: 23vh;
     }
-
+    .anecdotes li:first-of-type {
+        font-size: 13.5px;
+    }
     .anecdotes li:nth-of-type(3){
-        grid-column: 1/3;
+        grid-column: 2/4;
         grid-row: 1;
     }
 
@@ -639,6 +651,7 @@ footer {
     .ane_02 li:nth-of-type(2){
         grid-column: 3/4;
         grid-row: 1;
+        font-size: 13px;
     }
 
     .ane_02 li:nth-of-type(5){
@@ -646,7 +659,7 @@ footer {
         grid-row: 2;
     }
 
-    .ane_02 li:nth-of-type(5){
+    .ane_02 li:nth-of-type(6){
         grid-column: 3/4;
     }
 
@@ -655,7 +668,4 @@ footer {
         margin-bottom: 10px;
     }
 
-    .icon {
-        bottom: 250px;
-    }
 }
