@@ -23,7 +23,6 @@
 /*kroppsgrejerna----------------------------*/
 :root {
     margin: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -33,22 +32,17 @@ body {
     background-attachment: fixed;
     background-position: center;
     font-size: 1.5vw;
-    /*width: 92vw;
-    height: 100vh;*/
-    margin: 100px 4vw 100px 4vw ;
+    margin: 100px 4vw;
 }
 
 .container {
     margin: 100px auto;
     background-color: rgba(52, 85, 218, 0.3);
     border-radius: 20px;
-    padding: 30px;
+    padding: 20px;
+    
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-}
 /*-------------------------------------*/
 
 /*titel och nav-------------------------*/
@@ -56,6 +50,11 @@ header h1 {
     font-family: bungee-shade;
     font-size: 5vw;
     margin-bottom: 60px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    height: 5vw;
+
 }
 
 nav {
@@ -112,12 +111,9 @@ article {
     margin-bottom: 20px;
     background-color:rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid lightgrey;
     color:rgba(255, 255, 255, 0.8);
-}
-
-.best {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 }
@@ -127,7 +123,9 @@ article {
     margin-right: 20px;
 }
 .album_data p {
-    margin-top: 50px;
+    margin-top: 60px;
+    font-family: barlow;
+
 }
 
 ul {
@@ -140,19 +138,33 @@ ul {
 }
 .name{
     font-family: bungee-regular;
-    font-size: 2.3vw;
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 0;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 .years{
     font-family: barlowbold;
-    font-size: 1.7vw;
+    font-size: 20px;
+    margin-top: 0;
 }
 
+.CR {
+    margin-top: 60px;
+}
+.CR ul {
+    font-family: barlow;
+}
 .show_hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 25px 25px 0 0 ;
+    
 
 }
 
@@ -164,7 +176,8 @@ ul {
     border-radius: 25px 25px 0 0 ;
     left: 0;
     opacity: 0;
-    transition: all 0.7s ease;
+    transition:  all 0.7s;
+    
 }
 
 .show_not_hover:hover {
@@ -173,12 +186,15 @@ opacity: 1;
 
 .anecdotes {
     grid-column: 1/span 6;
-    grid-row: 3/4;
     gap: 10px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     padding-left: 0px;
     margin-top: 10px;
+    font-family: barlow;
+    margin-bottom: 0;
+
+
 }
 
 .anecdotes li {
@@ -187,6 +203,7 @@ opacity: 1;
     height: 25vw;
     display: flex;
     padding: 20px;
+
 }
 
 .anecdotes li:first-of-type{
@@ -241,6 +258,8 @@ opacity: 1;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin-top: 10px;
+    font-family: barlow;
+
 }
 
 .song_list div {
@@ -259,7 +278,6 @@ opacity: 1;
 }
 
 .song_list ul {
-    list-style: conic-gradient;
     margin-left: -20px;
 }
 
@@ -286,8 +304,11 @@ opacity: 1;
 }
 
 #axis_bold_as_love .song_list_02{
-background-color: #f7cbe2;
-color: #386277;
+    background-color: #f7cbe2;
+    color: #386277;
+}
+.ane_02 {
+    margin: 0;
 }
 .ane_02 li {
     display: grid;
@@ -347,18 +368,6 @@ footer {
     body{
         font-size: 16.65px;
     }
-    
-    .album_data h1 {
-        font-size: 25.5px;
-    }
-
-    .album_data h2 {
-        font-size: 55.5px;
-    }
-
-   /* header h1 {
-        font-size: 85px;
-    }*/
 }
 
 @media (max-width: 900px) {
@@ -366,23 +375,28 @@ footer {
         font-size: 13.5px;
     }
 
-    .album_data h1 {
-        font-size: 20.7px;
+    .name {
+        font-size: 30px;
+        height: 30px;
+        
     }
 
-    .album_data h2 {
+    .years {
         font-size: 15.3px;
     }
 
     header h1 {
         font-size: 4vw;
+        height: 4vw;
     }
 }
 
 @media (max-width: 854px) {
     header h1 {
-        font-size: 75;
+        font-size: 75px;
+        height: 250px;
     }
+
 }
 
 @media (max-width: 800px) {
@@ -394,6 +408,7 @@ footer {
     header h1 {
         text-align: center;
         font-size: 70px;
+        height: 230px;
     }
 
     .container{
@@ -449,12 +464,13 @@ footer {
         grid-column: 1/8;
     }
 
-    .album_data h1 {
+    .name {
         font-size: 45px;
-        padding-top: 10px;
+        height: 45px;
+    
     }
 
-    .album_data h2 {
+    .years {
         font-size: 25px;
     }
 
@@ -502,16 +518,14 @@ footer {
     .ane_02 li:nth-of-type(5){
         grid-column: 2 / 4;
         grid-row: 2;
+        margin-top: 0;
     }
 
     .ane_02 li:nth-of-type(6){
         grid-column: 4 / 5;
         grid-row: 2;
+        margin-top: 0;
     }
-}
-
-@media (max-width: 739px) {
-
 }
 
 @media (max-width: 596px) {
@@ -522,6 +536,7 @@ footer {
 
     header h1 {
         font-size: 50px ;
+        height: 160px;
     }
 }
 
@@ -541,9 +556,12 @@ footer {
 
     header h1 {
         font-size: 40px;
+        height: 200px;
+        margin-bottom: 30px;
     }
     .best {
         grid-template-columns: 1fr;
+        margin: 10px;
     }
 
     .container {
@@ -604,11 +622,12 @@ footer {
         grid-row: 3;
     }
 
-    .album_data h1 {
+    .name {
         font-size: 35px;
+        height: 35px;
     }
 
-    .album_data h2 {
+    .years {
         font-size: 22px;
     }
 
